@@ -266,7 +266,7 @@ git commit -m "style(navbar): update mobile menu padding"
 
 - Open a [Discussion](https://github.com/muhamedessamz/Zenith-Task-Management-API/discussions)
 - LinkedIn: [Mohamed Essam](https://www.linkedin.com/in/mohamedessamz/)
-- Email: muhamedessamz@gmail.com
+
 
 ---
 
