@@ -185,7 +185,6 @@ We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for deta
 If you have any questions, feel free to reach out:
 
 - **Maintainer**: [Mohamed Essam](https://www.linkedin.com/in/mohamedessamz/)
-- **Email**: muhamedessamz@gmail.com
 - **GitHub**: [muhamedessamz](https://github.com/muhamedessamz)
 
 ---
