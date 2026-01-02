@@ -204,7 +204,7 @@ export const ProjectsPage = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {projects.map((project) => {
                             const statusInfo = statusConfig[project.status as ProjectStatus] || statusConfig.InProgress;
-                            const StatusIcon = statusInfo.icon;
+
 
                             // Determine border color for left strip based on status
                             const stripColor = project.status === 'Completed' ? 'bg-green-500'

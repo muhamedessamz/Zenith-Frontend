@@ -13,14 +13,12 @@ import {
     Layout,
     Users,
     Plus,
-    Calendar,
     CheckCircle2,
     Clock,
     MoreVertical,
     Trash2,
     Shield,
     Search,
-    UserPlus,
     X,
     Edit
 } from 'lucide-react';
@@ -40,7 +38,6 @@ export const ProjectDetailsPage = () => {
     const [showAddMemberModal, setShowAddMemberModal] = useState(false);
     const [editingTask, setEditingTask] = useState<Task | null>(null);
     const [openDropdownId, setOpenDropdownId] = useState<number | null>(null);
-    const [taskToDelete, setTaskToDelete] = useState<Task | null>(null);
     const [accessDenied, setAccessDenied] = useState(false);
     const [errorMessage, setErrorMessage] = useState('');
     const [currentUserRole, setCurrentUserRole] = useState<string>('Viewer');

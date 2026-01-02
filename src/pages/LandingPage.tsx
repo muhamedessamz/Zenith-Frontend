@@ -1,6 +1,6 @@
 import { Logo } from '../components/Logo';
 import { Link } from 'react-router-dom';
-import { ArrowRight, CheckCircle2, Zap, Users, BarChart3, Bell, Calendar, Shield, Tag, Link2, Clock, Kanban } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Zap, Users, Calendar, Shield, Clock, Kanban } from 'lucide-react';
 
 export const LandingPage = () => {
     return (

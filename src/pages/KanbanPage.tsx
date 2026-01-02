@@ -1,16 +1,13 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useAuthStore } from '../store/authStore';
+
 import { Navbar } from '../components/Navbar';
 import {
     Plus,
     Loader2,
     AlertCircle,
     Calendar,
-    Flag,
-    MoreVertical,
-    Edit,
-    Trash2
+    Flag
 } from 'lucide-react';
 import {
     DndContext,
@@ -21,7 +18,7 @@ import {
     useDraggable,
     useDroppable,
 } from '@dnd-kit/core';
-import { SortableContext, verticalListSortingStrategy } from '@dnd-kit/sortable';
+
 import { taskService } from '../services/taskService';
 import type { Task } from '../types/task';
 import type { DragStartEvent, DragEndEvent } from '../types/utils';
@@ -36,7 +33,7 @@ interface KanbanColumn {
 }
 
 export const KanbanPage = () => {
-    const { user, logout } = useAuthStore();
+    // const { user, logout } = useAuthStore();
     const navigate = useNavigate();
 
     // State
@@ -176,10 +173,7 @@ export const KanbanPage = () => {
         return undefined;
     };
 
-    const handleLogout = () => {
-        logout();
-        navigate('/login');
-    };
+
 
     const getPriorityColor = (priority: string) => {
         switch (priority) {

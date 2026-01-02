@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useAuthStore } from '../store/authStore';
+
 import { Navbar } from '../components/Navbar';
 import {
     Plus,
@@ -8,19 +8,17 @@ import {
     CheckCircle2,
     Trash2,
     Edit,
-    X,
     Loader2,
     AlertCircle,
     Flag
 } from 'lucide-react';
 import { taskService } from '../services/taskService';
-import type { Task, CreateTaskDto, TaskFilters } from '../types/task';
-import { TimePicker } from '../components/TimePicker';
+import type { Task, TaskFilters } from '../types/task';
 import { TaskModal } from '../components/TaskModal';
 import { TagBadge } from '../components/Tags/TagBadge';
 
 export const TasksPage = () => {
-    const { user, logout } = useAuthStore();
+    // const { logout } = useAuthStore();
     const navigate = useNavigate();
 
     // State
@@ -144,10 +142,7 @@ export const TasksPage = () => {
         }
     };
 
-    const handleLogout = () => {
-        logout();
-        navigate('/login');
-    };
+
 
     const getPriorityColor = (priority: string) => {
         switch (priority) {

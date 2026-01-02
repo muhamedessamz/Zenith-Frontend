@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useAuthStore } from '../store/authStore';
+
 import { Navbar } from '../components/Navbar';
 import {
     Plus,
@@ -16,8 +15,8 @@ import { categoryService } from '../services/categoryService';
 import type { Category, CreateCategoryDto } from '../types/category';
 
 export const CategoriesPage = () => {
-    const { user, logout } = useAuthStore();
-    const navigate = useNavigate();
+    // const { user, logout } = useAuthStore();
+    // const navigate = useNavigate();
 
     // State
     const [categories, setCategories] = useState<Category[]>([]);
@@ -234,6 +233,7 @@ const CategoryModal = ({ category, onClose, onSuccess }: CategoryModalProps) => 
             if (category) {
                 await categoryService.updateCategory(category.id, {
                     ...formData,
+                    color: formData.color || '#6366f1',
                     id: category.id,
                 });
             } else {

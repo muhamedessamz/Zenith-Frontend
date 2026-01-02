@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Navbar } from '../components/Navbar';
-import { ChevronLeft, ChevronRight, Calendar as CalendarIcon, CheckCircle2, Clock, AlertCircle, Settings } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Calendar as CalendarIcon, CheckCircle2, Clock, Settings } from 'lucide-react';
 import { taskService } from '../services/taskService';
 import type { Task } from '../types/task';
 import { useNavigate } from 'react-router-dom';
@@ -9,7 +9,7 @@ export const CalendarPage = () => {
     const navigate = useNavigate();
     const [currentDate, setCurrentDate] = useState(new Date());
     const [tasks, setTasks] = useState<Task[]>([]);
-    const [loading, setLoading] = useState(true);
+
     const [selectedDate, setSelectedDate] = useState<Date | null>(null);
 
     useEffect(() => {
@@ -18,13 +18,10 @@ export const CalendarPage = () => {
 
     const fetchTasks = async () => {
         try {
-            setLoading(true);
             const response = await taskService.getTasks({ pageSize: 1000 });
             setTasks(response.data);
         } catch (error) {
             console.error('Failed to load tasks:', error);
-        } finally {
-            setLoading(false);
         }
     };
 
@@ -193,8 +190,7 @@ export const CalendarPage = () => {
                                     }
 
                                     const dateTasks = getTasksForDate(date);
-                                    const completedCount = dateTasks.filter(t => t.isCompleted).length;
-                                    const pendingCount = dateTasks.length - completedCount;
+
 
                                     return (
                                         <button

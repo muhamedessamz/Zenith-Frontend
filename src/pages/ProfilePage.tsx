@@ -28,7 +28,7 @@ export const ProfilePage = () => {
     const [paymentLoading, setPaymentLoading] = useState(false);
     const [loading, setLoading] = useState(false);
     const [message, setMessage] = useState<{ type: 'success' | 'error', text: string } | null>(null);
-    const [isEditing, setIsEditing] = useState(false);
+
 
     // Profile form
     const [profileData, setProfileData] = useState({
@@ -59,23 +59,9 @@ export const ProfilePage = () => {
         confirm: false
     });
 
-    const handleEdit = (e?: React.MouseEvent) => {
-        e?.preventDefault();
-        e?.stopPropagation();
-        setIsEditing(true);
-        setMessage(null);
-    };
 
-    const handleCancel = () => {
-        setProfileData(originalData);
-        setIsEditing(false);
-        setMessage(null);
-    };
 
-    const handleLogout = () => {
-        logout();
-        navigate('/login');
-    };
+
 
     const handleUpdateProfile = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -83,7 +69,7 @@ export const ProfilePage = () => {
         setMessage(null);
 
         try {
-            const response = await api.put('/User/profile', {
+            await api.put('/User/profile', {
                 username: profileData.username,
                 firstName: profileData.firstName,
                 lastName: profileData.lastName,
@@ -95,7 +81,7 @@ export const ProfilePage = () => {
 
             // Update original data
             setOriginalData(profileData);
-            setIsEditing(false);
+
             setMessage({ type: 'success', text: 'Profile updated successfully!' });
         } catch (error: any) {
             setMessage({
@@ -165,18 +151,18 @@ export const ProfilePage = () => {
         }
     };
 
-    const getPasswordStrength = (password: string) => {
-        if (password.length === 0) return { strength: 0, label: '', color: '' };
-        if (password.length < 6) return { strength: 1, label: 'Weak', color: 'bg-red-500' };
-        if (password.length < 10) return { strength: 2, label: 'Medium', color: 'bg-amber-500' };
-        return { strength: 3, label: 'Strong', color: 'bg-green-500' };
-    };
-    const getInitials = () => {
-        if (user?.firstName && user?.lastName) {
-            return `${user.firstName[0]}${user.lastName[0]}`;
-        }
-        return user?.email?.[0]?.toUpperCase() || 'U';
-    };
+    // const getPasswordStrength = (password: string) => {
+    //     if (password.length === 0) return { strength: 0, label: '', color: '' };
+    //     if (password.length < 6) return { strength: 1, label: 'Weak', color: 'bg-red-500' };
+    //     if (password.length < 10) return { strength: 2, label: 'Medium', color: 'bg-amber-500' };
+    //     return { strength: 3, label: 'Strong', color: 'bg-green-500' };
+    // };
+    // const getInitials = () => {
+    //     if (user?.firstName && user?.lastName) {
+    //         return `${user.firstName[0]}${user.lastName[0]}`;
+    //     }
+    //     return user?.email?.[0]?.toUpperCase() || 'U';
+    // };
 
     const hasChanges = JSON.stringify(profileData) !== JSON.stringify(originalData);
 

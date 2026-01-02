@@ -5,7 +5,7 @@ interface ProfileImageUploadProps {
     name: string;
     onImageChange: (file: File | null) => void;
     initialImage?: string | null;
-    initialFileName?: string | null;
+
     disabled?: boolean;
     size?: 'small' | 'medium' | 'large' | 'xl';
 }
@@ -14,7 +14,7 @@ export const ProfileImageUpload = ({
     name,
     onImageChange,
     initialImage = null,
-    initialFileName = null,
+
     disabled = false,
     size = 'large',
 }: ProfileImageUploadProps) => {

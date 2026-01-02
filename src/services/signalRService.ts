@@ -41,7 +41,7 @@ class SignalRService {
                 this.onNotificationReceived(notification);
             });
 
-            this.connection.onclose(async (error) => {
+            this.connection.onclose(async (_error) => {
                 this.isConnecting = false;
                 // console.log('SignalR Connection closed', error);
             });

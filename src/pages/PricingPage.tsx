@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Logo } from '../components/Logo';
 import { Link } from 'react-router-dom';
-import { Check, X, ArrowRight, HelpCircle } from 'lucide-react';
+import { Check, ArrowRight, HelpCircle } from 'lucide-react';
 
 export const PricingPage = () => {
     const [isAnnual, setIsAnnual] = useState(true);

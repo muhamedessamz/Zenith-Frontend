@@ -153,7 +153,6 @@ export const TaskDetailsPage = () => {
                         />
                         <TaskAssignments
                             taskId={task.id}
-                            projectId={task.projectId}
                         />
                     </div>
 

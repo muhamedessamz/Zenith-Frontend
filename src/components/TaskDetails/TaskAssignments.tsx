@@ -5,10 +5,10 @@ import api from '../../lib/axios';
 
 interface TaskAssignmentsProps {
     taskId: number;
-    projectId?: number;
+
 }
 
-export const TaskAssignments = ({ taskId, projectId }: TaskAssignmentsProps) => {
+export const TaskAssignments = ({ taskId }: TaskAssignmentsProps) => {
     const [assignments, setAssignments] = useState<any[]>([]);
     const [searchResults, setSearchResults] = useState<any[]>([]);
     const [loading, setLoading] = useState(true);

@@ -93,7 +93,7 @@ export const useAuthStore = create<AuthState>((set) => ({
     register: async (data: RegisterData) => {
         set({ isLoading: true, error: null });
         try {
-            const response = await api.post('/Auth/register', {
+            await api.post('/Auth/register', {
                 ...data,
                 confirmPassword: data.password, // Backend requires confirmPassword
             });

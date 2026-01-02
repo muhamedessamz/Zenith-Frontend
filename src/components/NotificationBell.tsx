@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Bell, X, Check } from 'lucide-react';
+import { Bell, Check } from 'lucide-react';
 import { signalRService } from '../services/signalRService';
 import type { Notification } from '../types/notification';
 

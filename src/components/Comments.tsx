@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { MessageCircle, Send, Edit2, Trash2, X } from 'lucide-react';
+import { MessageCircle, Send, Edit2, Trash2 } from 'lucide-react';
 import { commentService } from '../services/commentService';
 import type { Comment } from '../types/comment';
 import { useAuthStore } from '../store/authStore';

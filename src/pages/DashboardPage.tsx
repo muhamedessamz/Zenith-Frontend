@@ -76,7 +76,7 @@ export const DashboardPage = () => {
         { icon: Settings, label: 'Calendar Settings', path: '/calendar/settings', color: 'text-slate-600', bg: 'bg-slate-50', border: 'border-slate-100' },
     ];
 
-    const COLORS = ['#10B981', '#F59E0B', '#3B82F6', '#EF4444']; // Green, Amber, Blue, Red
+
 
     const chartData = stats?.tasksPerDay?.map(day => ({
         name: new Date(day.date).toLocaleDateString('en-US', { weekday: 'short' }),

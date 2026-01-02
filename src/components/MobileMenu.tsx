@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { Menu, X, LayoutDashboard, ListTodo, Trello, LogOut, User, Tag, FolderKanban, Hash, Calendar, Settings } from 'lucide-react';
+import { Menu, X, LayoutDashboard, ListTodo, LogOut, User, FolderKanban, Calendar, Settings } from 'lucide-react';
 import { useAuthStore } from '../store/authStore';
 
 interface MobileMenuProps {
