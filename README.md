@@ -191,6 +191,6 @@ If you have any questions, feel free to reach out:
 
 <div align="center">
 
-**Made with ❤️ for better productivity.**
+**Made with ❤️ by Mohamed Essam**
 
 </div>
